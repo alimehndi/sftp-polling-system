@@ -7,6 +7,7 @@ async function notifyExternalAPI(filePath) {
   } catch (err) {
     console.error('Error notifying external API:', err.message);
   }
+
 }
 
 export  { notifyExternalAPI };

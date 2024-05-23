@@ -32,6 +32,7 @@ async function pollSFTPPath(sftpPath, callback) {
     files.forEach(file => {
       callback(file.name);
     });
+   
     
   } catch (err) {
     console.error('Error polling SFTP path:', err.message);

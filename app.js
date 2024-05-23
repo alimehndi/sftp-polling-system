@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 // API endpoints for file operations
 app.use('/files', fileController);
 
+
 // Polling SFTP path and notify external API
 setInterval(() => {
   pollSFTPPath(process.env.SFTP_PATH, filePath => {

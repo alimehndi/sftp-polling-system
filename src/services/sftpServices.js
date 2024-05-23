@@ -17,6 +17,7 @@ async function connect() {
   }
 }
 
+
 async function fetchFile(filePath) {
   try {
     await connect();

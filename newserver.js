@@ -13,10 +13,6 @@ app.post('/notify', (req, res) => {
   }
 
   console.log(`Received notification for filePath: ${filePath}`);
-  
-  // Simulate processing the filePath or any other logic here
-  // For example, you might log it to a database or trigger some other action
-
   res.status(200).send({ message: 'Notification received successfully', filePath });
 });
 
