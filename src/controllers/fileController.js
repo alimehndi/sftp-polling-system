@@ -5,8 +5,10 @@ import  { fetchFile, deleteFile, addFile } from '../services/sftpServices.js';
 // Fetch file from SFTP path
 router.get('/:filePath', async (req, res) => {
   const { filePath } = req.params;
+  console.log(filePath);
   try {
     const fileData = await fetchFile(filePath);
+    console.log('File Data is', fileData);
     res.send(fileData);
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -31,6 +33,8 @@ router.post('/add', async (req, res) => {
     return res.status(400).send({ error: 'Both localFilePath and remoteFilePath are required' });
   }
   try {
+    console.log(localFilePath);
+    console.log(remoteFilePath);
     await addFile(localFilePath, remoteFilePath);
     res.send('File added successfully');
   } catch (err) {

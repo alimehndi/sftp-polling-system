@@ -17,6 +17,7 @@ app.use('/files', fileController);
 // Polling SFTP path and notify external API
 setInterval(() => {
   pollSFTPPath(process.env.SFTP_PATH, filePath => {
+    console.log(filePath);
     notifyExternalAPI(filePath);
   });
 }, process.env.POLL_INTERVAL);
